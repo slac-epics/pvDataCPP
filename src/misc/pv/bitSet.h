@@ -168,6 +168,11 @@ namespace epics { namespace pvData {
          */
         uint32 size() const;
 
+        //! Returns true if any bit is set in both *this and other
+        bool bitwise_and(const BitSet& other) const;
+        //! Returns true if any bit is set in both *this or other
+        bool bitwise_or(const BitSet& other) const;
+
         /**
          * Performs a logical <b>AND</b> of this target bit set with the
          * argument bit set. This bit set is modified so that each bit in it
