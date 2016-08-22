@@ -13,3 +13,5 @@ configure/CONFIG_SITE.*
 !configure/ExampleRELEASE.local
 **/O.*
 QtC-*
+O.*
+*.log
