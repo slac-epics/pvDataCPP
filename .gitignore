@@ -15,3 +15,4 @@ configure/CONFIG_SITE.*
 QtC-*
 O.*
 *.log
+RELEASE_SITE
