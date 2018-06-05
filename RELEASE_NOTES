@@ -1,0 +1,17 @@
+#==============================================================
+#
+#  Name: RELEASE_NOTES
+#
+#==============================================================
+R7.1.0-0.0.1	2018-06-4 Bruce Hill
+	7.1.0-pre1 plus support for SLAC build
+
+R6.0.0-0.3.0	2017-01-31 Bruce Hill
+	Added RELEASE_SITE to .gitignore
+
+R6.0.0-0.2.0	2016-08-22 Bruce Hill
+	Added -include TOP/../../RELEASE.local in TOP/configure/RELEASE.local
+		so we can support build patterns where BASE_MODULE_VERSION is defined two levels up.
+
+R6.0.0-0.1.0	2016-08-22 Bruce Hill
+	Added configure/RELEASE.local for local releases
