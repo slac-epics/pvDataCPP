@@ -16,8 +16,6 @@
 # Don't set your version to anything such as "test" that
 # could match a directory name.
 # ==========================================================
-# pvDataCPP does not appear to depend on pvCommonCPP after all
-#PVCOMMON_MODULE_VERSION			= R4.2-0.3.0
 
 # ============================================================
 # Define module paths using pattern
@@ -25,7 +23,6 @@
 #  or
 # FOO = /Full/Path/To/Development/Version 
 # ============================================================
-#PVCOMMON	= $(EPICS_MODULES)/pvCommonCPP/$(PVCOMMON_MODULE_VERSION)
 
 # Set EPICS_BASE last so it appears last in the DB, DBD, INCLUDE, and LIB search paths
 EPICS_BASE              = $(EPICS_SITE_TOP)/base/$(BASE_MODULE_VERSION)
