@@ -2,8 +2,26 @@
 
 @page release_notes Release Notes
 
+Release 7.1.3 (Apr 2019)
+========================
+
+- Fix for array serialization error to/from big endian.
+  https://github.com/epics-base/pvDataCPP/issues/65
+
+Release 7.1.2 (Mar 2019)
+========================
+
+- 7.1.1 tag pushed prematurely.
+
+Release 7.1.1 (Mar 2019)
+========================
+
+- Fixes
+ - Init order issue with StandardField::getStandardField()
+ - Build fix for Visual Studio 2013+
+
 Release 7.1.0 (Nov 2018)
-==========================
+========================
 
 - Deprecations
  - BoundedString, BoundedScalarArray, and FixedScalarArray will be removed unless they are fixed.
