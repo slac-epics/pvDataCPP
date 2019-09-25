@@ -9,6 +9,7 @@
 /configure/*.local
 /configure/RELEASE.*
 /configure/CONFIG_SITE.*
+/RELEASE_SITE
 O.*/
 /QtC-*
 envPaths
