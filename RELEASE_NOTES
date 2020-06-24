@@ -3,6 +3,9 @@
 #  Name: RELEASE_NOTES
 #
 #==============================================================
+R8.0.2-1.0.0	2020-06-23 Bruce Hill
+	8.0.2 plus Davidsaver fixes for eget output w/o quotes
+
 R8.0.2-0.0.1	2020-06-23 Bruce Hill
 	8.0.2 plus SLAC build support
 
