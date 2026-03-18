@@ -431,12 +431,36 @@ std::ostream& operator<<(std::ostream& strm, const PVStructure::Formatter& forma
                     return strm;
 
                 case scalarArray:
+                {
                     strm<<format::indent();
                     printTimeT(strm, format.xtop);
                     printAlarmT(strm, format.xtop);
-                    strm<<std::setprecision(6)<<*static_cast<const PVScalarArray*>(value.get())<<'\n';
-                    return strm;
 
+                    const PVScalarArray* pvArray = static_cast<const PVScalarArray*>(value.get());
+                    ScalarArrayConstPtr scalarArray = pvArray->getScalarArray();
+
+                    // Stringify byte arrays if requested
+                    if (format.xstring && scalarArray && scalarArray->getElementType() == pvByte) {
+                        shared_vector<const int8_t> byteArray;
+                        pvArray->getAs(byteArray);
+
+                        const char* str = reinterpret_cast<const char*>(byteArray.data());
+                        const size_t slen = strlen(str);
+
+                        const size_t buflen = epicsStrnEscapedFromRawSize(str, slen);
+
+                        char* buf = new char[buflen+1] {};
+                        epicsStrnEscapedFromRaw(buf, buflen+1, str, slen);
+
+                        strm<<buf;
+                        delete [] buf;
+                    } else {
+                        strm<<std::setprecision(6);
+                        strm<<*pvArray;
+                    }
+                    strm<<'\n';
+                    return strm;
+                }
                 case structure:
                     if(printEnumT(strm, format.xtop, true)) {
                         strm<<'\n';
